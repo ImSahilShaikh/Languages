@@ -182,3 +182,195 @@ Diagonal Matrix
    0   0   0   1
 
 >> % help command name gives the documentation
+>> size(A)
+ans =
+
+   3   2
+
+>> sz = size(A)
+sz =
+
+   3   2
+
+>> % to get first or second dimensions
+>> size(A,1)
+ans =  3
+>> size(A,2)
+ans =  2
+>> %getting size of longest dimension
+>> length(A)
+ans =  3
+>> length(V)
+error: 'V' undefined near line 1 column 8
+>> length(v)
+ans =  6
+>> pwd
+ans = C:\Users\ImSahil
+>> ls
+ Volume in drive C is Windows
+ Volume Serial Number is 40E6-E75B
+
+ Directory of C:\Users\ImSahil
+
+[.]                  [.ipynb_checkpoints] [.vscode]            [Favorites]          [TeXworks]
+[..]                 [.ipython]           [3D Objects]         [Links]              Untitled.ipynb
+[.anaconda]          [.jupyter]           [Anaconda3]          [Music]              [Videos]
+[.conda]             [.matplotlib]        [ansel]              [OneDrive]
+.condarc             .mongorc.js          [Contacts]           [Roaming]
+[.config]            .octave_hist         [Documents]          [Saved Games]
+.dbshell             .python_history      [Downloads]          [seaborn-data]
+.gitconfig           [.spyder-py3]        [Evernote]           [Searches]
+               7 File(s)          1,015 bytes
+              28 Dir(s)  37,956,026,368 bytes free
+>>  whos
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  =====
+        A           3x2                         48  double
+        B           3x2                         48  double
+        a           1x1                          8  double
+        ans         1x16                        16  char
+        b           1x12                        12  char
+        c           2x3                         48  double
+        sz          1x2                         16  double
+        v           1x6                         24  double
+        w           1x10000                  80000  double
+
+Total is 10055 elements using 80220 bytes
+
+>> clear sz
+>> whos
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  =====
+        A           3x2                         48  double
+        B           3x2                         48  double
+        a           1x1                          8  double
+        ans         1x16                        16  char
+        b           1x12                        12  char
+        c           2x3                         48  double
+        v           1x6                         24  double
+        w           1x10000                  80000  double
+
+Total is 10053 elements using 80204 bytes
+
+>> % save command is used to save the data into machine
+>> %syntax for save is save filename.extension variablename
+>> % we can load that file using load command
+>> % syntax load('file.extension')
+>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> A(3,2)
+ans =  6
+>> A(2,:)
+ans =
+
+   3   4
+
+>> A(:,2)
+ans =
+
+   2
+   4
+   6
+
+>> A([1 3],:)
+ans =
+
+   1   2
+   5   6
+
+>> A(:2)
+parse error:
+
+  syntax error
+
+>>> A(:2)
+       ^
+
+>> A(:,2)
+ans =
+
+   2
+   4
+   6
+
+>> A(:,2) = [10,12,14]
+A =
+
+    1   10
+    3   12
+    5   14
+
+>> % appending column to the right
+>> A = [A,[20;21;22]]
+A =
+
+    1   10   20
+    3   12   21
+    5   14   22
+
+>> % put all elements of a into single vector columns
+>> A(:)
+ans =
+
+    1
+    3
+    5
+   10
+   12
+   14
+   20
+   21
+   22
+
+>> A
+A =
+
+    1   10   20
+    3   12   21
+    5   14   22
+
+>> B
+B =
+
+   1   2
+   3   4
+   5   6
+
+>> c = [A B]
+c =
+
+    1   10   20    1    2
+    3   12   21    3    4
+    5   14   22    5    6
+
+>> % concating two matrices
+>> d = [B A]
+d =
+
+    1    2    1   10   20
+    3    4    3   12   21
+    5    6    5   14   22
+
+>> e = [c ; d]
+e =
+
+    1   10   20    1    2
+    3   12   21    3    4
+    5   14   22    5    6
+    1    2    1   10   20
+    3    4    3   12   21
+    5    6    5   14   22
+
+>> size(e)
+ans =
+
+   6   5
