@@ -730,3 +730,42 @@ ans =
    3.0531e-15   4.1633e-17   1.0000e+00
    
    %--------------------Plotting of Data-------------------
+   >> %generating some data
+>> t = [0:0.01:0.98];
+>> y1 = sin(2*pi*4*t);
+>> plot(t,y1)
+>> y2 = cos(2*pi*4*t);
+>> plot(t,y2)
+>>  %  plotting both on each other
+>> plot(t,y1)
+>> hold on;
+>> plot(t,y2,'r')
+>> xlabel('time')
+>> ylabel('value')
+>> legend('sin','cos')
+>> title('MyPlot')
+>> % print command will save the plot
+>> %syntax for saving the plot
+>> %print -dpng 'filename.extension'
+>> % to terminate the plot window we can use close command
+>> close
+>> % we can give figure numbers as
+>> figure(1); plot(t,y1);
+>> close
+>> % creating subplots
+>>
+>> subplot(1,2,1);
+>> plot(t,y1);
+>> subplot(1,2,2);
+>> plot(t,y2);
+>> % we can set x and y ranges
+>> axis([0.5 1 -1 1])% [xlow xhigh ylow yhigh]
+>> % clearing a figure
+>> clf
+>>  A =magic(5);
+>> imagesc(A)
+>> % this will create a heatmap kind of figure
+>> imagesc(A), colorbar
+>> % this will give a color bar which will denote which color corresponds to which value
+>> imagesc(A), colorbar, colormap gray
+>> % this will turn the colormap in gray color
