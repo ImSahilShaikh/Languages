@@ -374,3 +374,359 @@ e =
 ans =
 
    6   5
+
+>> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> B = [11 12; 13 14; 15 16]
+B =
+
+   11   12
+   13   14
+   15   16
+
+>> C = [1 1; 2 2]
+C =
+
+   1   1
+   2   2
+
+>> A*C
+ans =
+
+    5    5
+   11   11
+   17   17
+
+>> A.*B % will multiple each value of A with corresponding values of B
+ans =
+
+   11   24
+   39   56
+   75   96
+
+>> v = [ 1;2;3]
+v =
+
+   1
+   2
+   3
+
+>> 1./v
+ans =
+
+   1.00000
+   0.50000
+   0.33333
+
+>>  A.^2
+ans =
+
+    1    4
+    9   16
+   25   36
+
+>> 1 ./A
+ans =
+
+   1.00000   0.50000
+   0.33333   0.25000
+   0.20000   0.16667
+
+>> log(v)
+ans =
+
+   0.00000
+   0.69315
+   1.09861
+
+>> log(A)
+ans =
+
+   0.00000   0.69315
+   1.09861   1.38629
+   1.60944   1.79176
+
+>> exp(v)
+ans =
+
+    2.7183
+    7.3891
+   20.0855
+
+>> abs(v)
+ans =
+
+   1
+   2
+   3
+
+>> %takes absolute of all values
+>> -v
+ans =
+
+  -1
+  -2
+  -3
+
+>> % same as -1*v
+>> incrementing a vector
+error: 'incrementing' undefined near line 2 column 1
+>> %incrementing a vector
+>> v + ones(length(v),1)
+ans =
+
+   2
+   3
+   4
+
+>> %alternate method
+>> v + 1
+ans =
+
+   2
+   3
+   4
+
+>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> A'
+ans =
+
+   1   3   5
+   2   4   6
+
+>>  % this is transpose of matrix
+>> (A')'
+ans =
+
+   1   2
+   3   4
+   5   6
+
+>> % getting max value and index of matrix
+>> max(A)
+ans =
+
+   5   6
+
+>> [val,ind] =max(A)
+val =
+
+   5   6
+
+ind =
+
+   3   3
+
+>> a = [ 1 10 15 6]
+a =
+
+    1   10   15    6
+
+>> max(a)
+ans =  15
+>> [val,ind]=max(a)
+val =  15
+ind =  3
+>> a < 3
+ans =
+
+  1  0  0  0
+
+>> % will return all the boolean values (1 or 0) if condition is true
+>>
+>> % we can use find method to return the index+1 of the variables which are more than given condtion
+>> find( a > 3)
+ans =
+
+   2   3   4
+
+>> %creating a magic matrix (the addition of rows columns and diagonals is same)
+>> magic(3)
+ans =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+>> magic(4)
+ans =
+
+   16    2    3   13
+    5   11   10    8
+    9    7    6   12
+    4   14   15    1
+
+>>
+>> [r,c] = find(magic(3)>7)
+r =
+
+   1
+   3
+
+c =
+
+   1
+   2
+
+>> [r,c] = find(magic(3)>=7)
+r =
+
+   1
+   3
+   2
+
+c =
+
+   1
+   2
+   3
+
+>>  taking sum and product of all elements
+error: 'taking' undefined near line 1 column 2
+>> % taking sum and product of all elements
+>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> sum(A)
+ans =
+
+    9   12
+
+>> a
+a =
+
+    1   10   15    6
+
+>> sum(a)
+ans =  32
+>> prod(a)
+ans =  900
+>>  % floor and ceil is available here to roundoff
+>> b = [0.3 0.8 0.5]
+b =
+
+   0.30000   0.80000   0.50000
+
+>> ceil(b)
+ans =
+
+   1   1   1
+
+>> floor(b)
+ans =
+
+   0   0   0
+
+>> a
+a =
+
+    1   10   15    6
+
+>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> max(A,[],1)
+ans =
+
+   5   6
+
+>> max(A,[],2)
+ans =
+
+   2
+   4
+   6
+
+>> %this returns max value of row or column as per last parameter
+>>
+>> % To find maximum element from entire matrix
+>> max(max(A))
+ans =  6
+>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> % alternate way
+>> max(A(:))
+ans =  6
+>> X = magic(5)
+X =
+
+   17   24    1    8   15
+   23    5    7   14   16
+    4    6   13   20   22
+   10   12   19   21    3
+   11   18   25    2    9
+
+>> sum(A,1)
+ans =
+
+    9   12
+
+>> sum(X,1)
+ans =
+
+   65   65   65   65   65
+
+>> sum(X,2)
+ans =
+
+   65
+   65
+   65
+   65
+   65
+
+>> % finding sum of diagonal
+>> sum(sum(X.*eye(5))
+> )
+ans =  65
+>> sum(sum(A.*flipud(eye(5))))
+error: product: nonconformant arguments (op1 is 3x2, op2 is 5x5)
+>> sum(sum(X.*flipud(eye(5))))
+ans =  65
+>> A = magic(3)
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+>> % inversion of matrix
+>> temp = pinv(A) % pinv stands for pseudo inverse
+temp =
+
+   0.147222  -0.144444   0.063889
+  -0.061111   0.022222   0.105556
+  -0.019444   0.188889  -0.102778
+
+>> temp*A
+ans =
+
+   1.0000e+00   2.0817e-16  -3.1641e-15
+  -6.1062e-15   1.0000e+00   6.2450e-15
+   3.0531e-15   4.1633e-17   1.0000e+00
+   
+   %--------------------Plotting of Data-------------------
