@@ -769,3 +769,109 @@ ans =
 >> % this will give a color bar which will denote which color corresponds to which value
 >> imagesc(A), colorbar, colormap gray
 >> % this will turn the colormap in gray color
+
+>> % Control statements and branching
+>>
+>> v = zeros(10,1)
+v =
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+>> for i=1:10,
+>      v(i) = 2*i;
+>  end;
+>> v
+v =
+
+    2
+    4
+    6
+    8
+   10
+   12
+   14
+   16
+   18
+   20
+
+>> %this was for loop
+>>
+>> %Now while loop
+>>
+>> i =1;
+>> while i <= 5;
+>  v(i) = 100;
+>  i = i + 1;
+> end;
+>> v
+v =
+
+   100
+   100
+   100
+   100
+   100
+    12
+    14
+    16
+    18
+    20
+
+>> i=1;
+>> while true;
+> v(i) = 99;
+> i=i+1;
+> if( i == 6);
+> break;
+> end;
+> end;
+>> v
+v =
+
+   99
+   99
+   99
+   99
+   99
+   12
+   14
+   16
+   18
+   20
+
+>> %example of while if and break
+>>
+>> %if elseif ladder
+>> v(1) = 2;
+>> if v(1) == 1;
+>     display('The value is one');
+>  elseif v(1) == 2;
+>     display('The value is two');
+>  else
+>     display('The value is something else');
+>  end;
+The value is two
+>>
+>>
+>> % functions
+>> pwd
+ans = C:\Users\ImSahil
+>> my_square(2)
+ans =  4
+>> % write the function in the path you're currently working
+>> my_square(2)
+ans =  4
+>> [x,y] = my_square(2)
+x =  4
+y =  8
+>> % in matlab a function can return two values. x is square and y is cube of the number
+>> % matlab functions can return multiple values
